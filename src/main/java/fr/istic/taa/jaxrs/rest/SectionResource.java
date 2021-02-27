@@ -16,9 +16,9 @@ public class SectionResource {
 
   @GET
   @Path("/{sectionId}")
-  public Section getSectionById(@PathParam("sectionId") Long petId)  {
+  public Section getSectionById(@PathParam("sectionId") Long sectionId)  {
       // return pet
-      return sectiondDao.findOne(petId);
+      return sectiondDao.findOne(sectionId);
   }
 
   @GET

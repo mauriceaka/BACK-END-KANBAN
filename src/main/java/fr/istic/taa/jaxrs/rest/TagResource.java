@@ -57,4 +57,15 @@ public class TagResource {
         tagDao.save(newTag);
         return Response.ok().entity("SUCCESS").build();
     }
+
+    @DELETE
+    @Path("/{tagId}")
+    public Response deleteTagById(@PathParam("tagId") Long tagId){
+        //return tag
+        logger.info("momo");
+        tagDao.deleteById(tagId);
+        return Response.ok().entity("DELETE SUCCESSFULLY").build();
+    }
+
+
 }

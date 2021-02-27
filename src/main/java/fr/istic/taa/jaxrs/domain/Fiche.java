@@ -2,16 +2,21 @@ package fr.istic.taa.jaxrs.domain;
 
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
 @Entity
-public class Fiche {
+@XmlRootElement(name = "Fiche")
+public class Fiche implements Serializable {
     private long id;
     private String libelle;
     private Date datebutoire;
     private User user;
-    private Date time;
+    private String time;
     private String lieu;
     private String note;
     private String url;
@@ -19,7 +24,7 @@ public class Fiche {
     private Section section;
     
     public Fiche(){ }
-    public Fiche(String libelle, Date datebutoire, Date time, String lieu, String url, List<Tag>tag, String note, Section section){
+    public Fiche(String libelle, Date datebutoire, String time, String lieu, String url, List<Tag>tag, String note, Section section){
         this.libelle = libelle;
         this. datebutoire= datebutoire;
         this. time= time;
@@ -29,19 +34,6 @@ public class Fiche {
         this.url=url;
         this.section=section;
     }
-    public Fiche(String libelle, Date datebutoire, User user, Date time, String lieu, String url, List<Tag>tag, String note, Section section){
-        this.libelle = libelle;
-        this. datebutoire= datebutoire;
-        this. user= user;
-        this. time= time;
-        this. lieu= lieu;
-        this. note= note;
-        this. tag= tag;
-        this.url=url;
-        this.section=section;
-    }
-
-
 
     @Id
     @GeneratedValue
@@ -61,14 +53,22 @@ public class Fiche {
         this.libelle = libelle;
     }
 
-
-    public Date getdatebutoire() {
+    public Date getDatebutoire() {
         return datebutoire;
     }
 
-    public void setdatebutoire(Date datebutoire) {
+    public void setDatebutoire(Date datebutoire) {
         this.datebutoire = datebutoire;
     }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
     @ManyToOne
     public User getUser() {
         return user;
@@ -76,14 +76,6 @@ public class Fiche {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public Date getTime() {
-        return time;
-    }
-
-    public void setTime(Date time) {
-        this.time = time;
     }
 
     public String getLieu() {
@@ -111,6 +103,7 @@ public class Fiche {
     }
 
 
+    @XmlTransient
     @ManyToMany(mappedBy = "fiche", cascade = CascadeType.PERSIST)
     public List<Tag> getTag() {
         return tag;

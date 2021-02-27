@@ -1,5 +1,7 @@
 package fr.istic.taa.jaxrs.dao.generic;
 
+import fr.istic.taa.jaxrs.domain.Tag;
+
 import java.io.Serializable;
 import java.util.List;
 

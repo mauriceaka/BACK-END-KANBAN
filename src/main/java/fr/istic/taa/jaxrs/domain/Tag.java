@@ -1,13 +1,13 @@
 package fr.istic.taa.jaxrs.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
+import javax.xml.bind.annotation.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Tag {
+@XmlRootElement(name = "Tag")
+public class Tag implements Serializable {
     private long id;
     private String libelle;
     private List<Fiche> fiche;
@@ -25,6 +25,7 @@ public class Tag {
 
     @Id
     @GeneratedValue
+    @XmlElement(name = "id")
     public long getId() {
         return id;
     }
@@ -33,6 +34,7 @@ public class Tag {
         this.id = id;
     }
 
+    @XmlElement(name = "libelle")
     public String getLibelle() {
         return libelle;
     }
@@ -42,6 +44,8 @@ public class Tag {
     }
 
     @ManyToMany
+    @XmlElementWrapper(name = "fiches")
+    @XmlElement(name = "fiche")
     public List<Fiche> getFiche() {
         return fiche;
     }

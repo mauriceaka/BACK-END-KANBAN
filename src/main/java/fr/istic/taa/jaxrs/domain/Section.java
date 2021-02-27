@@ -7,11 +7,12 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @XmlRootElement(name = "Section")
-public class Section {
+public class Section implements Serializable {
     private long id;
     private String nomsection;
     private List<Fiche> fiches;
@@ -42,11 +43,10 @@ public class Section {
         this.nomsection = nomsection;
     }
 
-    @XmlElementWrapper(name = "fiches")
-    @XmlElement(name = "fiche")
+//    @XmlElementWrapper(name = "fiches")
+//    @XmlElement(name = "fiche")
     @XmlTransient
     @OneToMany(mappedBy = "section", cascade = CascadeType.PERSIST)
-    @Nullable
     public List<Fiche> getFiches() {
         return fiches;
     }

@@ -1,6 +1,7 @@
 package fr.istic.taa.jaxrs.domain;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlTransient;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,6 +51,7 @@ public class User {
     }
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
+    @XmlTransient
     public List<Fiche> getFiche() {
         return fiche;
     }

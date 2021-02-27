@@ -22,8 +22,10 @@ import java.util.Set;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
+import fr.istic.taa.jaxrs.rest.FicheResource;
 import fr.istic.taa.jaxrs.rest.SectionResource;
 import fr.istic.taa.jaxrs.rest.SwaggerResource;
+import fr.istic.taa.jaxrs.rest.TagResource;
 import io.swagger.v3.jaxrs2.integration.resources.OpenApiResource;
 
 @ApplicationPath("/")
@@ -36,6 +38,8 @@ public class TestApplication extends Application {
         final Set<Class<?>> clazzes = new HashSet<Class<?>>();
 
         clazzes.add(SectionResource.class);
+        clazzes.add(TagResource.class);
+        clazzes.add(FicheResource.class);
         clazzes.add(OpenApiResource.class);
         clazzes.add(SwaggerResource.class);
 

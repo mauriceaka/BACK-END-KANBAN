@@ -18,7 +18,7 @@ public class FicheResource {
 
     @GET
     @Path("/{ficheId}")
-    public Fiche getSectionById(@PathParam("ficheId") Long ficheId)  {
+    public Fiche getFicheById(@PathParam("ficheId") Long ficheId)  {
         // return fiche
         return ficheDao.findOne(ficheId);
     }
@@ -45,13 +45,21 @@ public class FicheResource {
     public Response editFiche(
             @Parameter(description = "Fiche object that needs to be edited to the store", required = true) Fiche fiche) {
         // edit fiche
+        Fiche newfiche = getFicheById(fiche.getId());
+        newfiche.setUrl(fiche.getUrl());
+        newfiche.setTag(fiche.getTag());
+        newfiche.setSection(fiche.getSection());
+        newfiche.setNote(fiche.getNote());
+        newfiche.setLibelle(fiche.getLibelle());
+        newfiche.setLieu(fiche.getLieu());
+        newfiche.setDatebutoire(fiche.getDatebutoire());
         ficheDao.save(fiche);
         return Response.ok().entity("SUCCESS").build();
     }
 
     @DELETE
     @Path("/{ficheId}")
-    public Response deleteSectionById(@PathParam("ficheId") Long ficheId)  {
+    public Response deleteFicheById(@PathParam("ficheId") Long ficheId)  {
         // return fiche
         ficheDao.deleteById(ficheId);
         return Response.ok().entity("DELETE SUCCESSFUL").build();

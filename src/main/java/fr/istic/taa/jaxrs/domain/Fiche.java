@@ -37,34 +37,34 @@ public class Fiche implements Serializable {
 
     @Id
     @GeneratedValue
+    @XmlElement(name = "id")
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
 
+    @XmlElement(name = "Libelle")
     public String getLibelle() {
         return libelle;
     }
-
     public void setLibelle(String libelle) {
         this.libelle = libelle;
     }
 
+    @XmlElement(name = "Datebutoire")
     public Date getDatebutoire() {
         return datebutoire;
     }
-
     public void setDatebutoire(Date datebutoire) {
         this.datebutoire = datebutoire;
     }
 
+    @XmlElement(name = "Time")
     public String getTime() {
         return time;
     }
-
     public void setTime(String time) {
         this.time = time;
     }
@@ -73,31 +73,30 @@ public class Fiche implements Serializable {
     public User getUser() {
         return user;
     }
-
     public void setUser(User user) {
         this.user = user;
     }
 
+    @XmlElement(name = "Lieu")
     public String getLieu() {
         return lieu;
     }
-
     public void setLieu(String lieu) {
         this.lieu = lieu;
     }
 
+    @XmlElement(name = "Lieu")
     public String getUrl() {
         return url;
     }
-
     public void setUrl(String url) {
         this.url = url;
     }
 
+    @XmlElement(name = "note")
     public String getNote() {
         return note;
     }
-
     public void setNote(String note) {
         this.note = note;
     }
@@ -108,23 +107,18 @@ public class Fiche implements Serializable {
     public List<Tag> getTag() {
         return tag;
     }
-
     public void setTag(List<Tag> tag) {
         this.tag = tag;
     }
 
     @ManyToOne
+    @XmlElement(name = "Section")
     public Section getSection() {
         return section;
     }
-
     public void setSection(Section section) {
         this.section = section;
     }
-    //    @Override
-//    public String toString(){
-//        return "Fiche [id=" + id + ", libelle=" + libelle + ", fiche=" + getLibelle() +"]";
-//    }
 
    
 }

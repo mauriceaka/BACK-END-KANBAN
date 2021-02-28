@@ -37,23 +37,22 @@ public class User implements Serializable {
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
+
     @XmlElement(name = "Nom")
     public String getNom() {
         return nom;
     }
-
     public void setNom(String nom) {
         this.nom = nom;
     }
+
     @XmlElement(name = "Profession")
     public String getProfession() {
         return profession;
     }
-
     public void setProfession(String profession) {
         this.profession = profession;
     }
@@ -63,15 +62,14 @@ public class User implements Serializable {
     public List<Fiche> getFiche() {
         return fiche;
     }
-
     public void setFiche(List<Fiche> fiche) {
         this.fiche = fiche;
     }
+
     @XmlElement(name = "Email")
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }

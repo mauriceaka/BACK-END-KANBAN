@@ -14,7 +14,7 @@ import io.swagger.v3.oas.models.tags.Tag;
 public class Pet implements Serializable {
   private long id;
   private String name;
-  private List<Tag> tags = new ArrayList<Tag>();
+  private List<Tag> tags = new ArrayList<>();
 
   @XmlElement(name = "id")
   public long getId() {

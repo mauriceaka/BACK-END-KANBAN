@@ -16,7 +16,7 @@ public class Fiche implements Serializable {
     private String libelle;
     private Date datebutoire;
     private User user;
-    private String time;
+    private int time;
     private String lieu;
     private String note;
     private String url;
@@ -24,7 +24,7 @@ public class Fiche implements Serializable {
     private Section section;
     
     public Fiche(){ }
-    public Fiche(String libelle, Date datebutoire, String time, String lieu, String url, List<Tag>tag, String note, Section section){
+    public Fiche(String libelle, Date datebutoire, int time, String lieu, String url, List<Tag>tag, String note, Section section){
         this.libelle = libelle;
         this. datebutoire= datebutoire;
         this. time= time;
@@ -62,10 +62,10 @@ public class Fiche implements Serializable {
     }
 
     @XmlElement(name = "Time")
-    public String getTime() {
+    public int getTime() {
         return time;
     }
-    public void setTime(String time) {
+    public void setTime(int time) {
         this.time = time;
     }
 

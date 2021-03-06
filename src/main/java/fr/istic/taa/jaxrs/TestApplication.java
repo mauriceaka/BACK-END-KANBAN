@@ -41,7 +41,10 @@ public class TestApplication extends Application {
         clazzes.add(SwaggerResource.class);
         clazzes.add(UserResource.class);
 
+
         return clazzes;
     }
+
+
 
 }

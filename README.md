@@ -35,7 +35,7 @@ For API tests with postman, to delete a parent you must make sure that all of it
 
 ## Authors
 
-This back-end part was developed by these students:
+This back-end part was developed by these students:</br>
 •	Rebecca EHUA
 •	Maurice AKA
 •	Franck KOUAMELAN

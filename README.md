@@ -22,7 +22,7 @@ Clone the project: https://github.com/mauriceaka/BACK-END-KANBAN.git
 ## Start-up
 
 To start the project, you must run the RestServer file. </br>
-To view APIs with swagger ui: http://localhost:8081/api </br>
+To view APIs with swagger ui: http://localhost:8081/api/ </br>
 For API tests with postman, to delete a parent you must make sure that all of its children are deleted.
 
 

@@ -20,12 +20,10 @@ Clone the project: https://github.com/mauriceaka/BACK-END-KANBAN.git
 
 
 
-
-
 ## Start-up
 
-To start the project, you must run the RestServer file, location: src/main/java/fr/istic/taa/jaxrs/RestServer.java. </br>
-To view APIs with swagger ui: http://localhost:8081/api/ </br>
+To start the project, you must run the RestServer file, location: <strong>src/main/java/fr/istic/taa/jaxrs/RestServer.java</strong>. </br>
+To view APIs with swagger ui:<strong> http://localhost:8081/api/</strong></br>
 For API tests with postman, to delete a parent you must make sure that all of its children are deleted.
 
 
@@ -43,8 +41,8 @@ This back-end part was developed by these students:</br>
 •	Maurice AKA </br>
 •	Franck KOUAMELAN
 
-note that this would not be done without being served with the project submitted by our teacher Olivier BARAIS. </br>
-Thanks for your help!!!
+note that this work would not be done without having forked the project that our teacher gave us, sir <strong>Olivier BARAIS</strong>. </br>
+Thanks for your help and your time!!!
 
 
 

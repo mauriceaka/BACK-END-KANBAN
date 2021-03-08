@@ -13,9 +13,9 @@ Clone the project: https://github.com/mauriceaka/BACK-END-KANBAN.git
 
 •	jersey: jersey is a framework that allows you to develop web services according to the REST architecture 
     following the specifications of JAX-RS.
-•	Java IDE (Eclipse, Intelliji Idea etc…)  </br>
-•	JRE >=1.8 </br>
-•	Use the java version 8 </br>
+•	Java IDE (Eclipse, Intelliji Idea etc…)  
+•	JRE >=1.8 
+•	Use the java version 8 
 •	Maven 
 
 
@@ -43,7 +43,7 @@ This back-end part was developed by these students:</br>
 •	Maurice AKA </br>
 •	Franck KOUAMELAN
 
-note that this would not be done without being served with the project submitted by our teacher Olivier BARAIS.
+note that this would not be done without being served with the project submitted by our teacher Olivier BARAIS. </br>
 Thanks for your help!!!
 
 

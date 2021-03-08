@@ -12,7 +12,7 @@ Clone the project: https://github.com/mauriceaka/BACK-END-KANBAN.git
 ## Prerequisites
 
 •	jersey: jersey is a framework that allows you to develop web services according to the REST architecture 
-    following the specifications of JAX-RS. </br>
+    following the specifications of JAX-RS.
 •	Java IDE (Eclipse, Intelliji Idea etc…)  </br>
 •	JRE >=1.8 </br>
 •	Use the java version 8 </br>
@@ -24,7 +24,7 @@ Clone the project: https://github.com/mauriceaka/BACK-END-KANBAN.git
 
 ## Start-up
 
-To start the project, you must run the RestServer file. </br>
+To start the project, you must run the RestServer file, location: src/main/java/fr/istic/taa/jaxrs/RestServer.java. </br>
 To view APIs with swagger ui: http://localhost:8081/api/ </br>
 For API tests with postman, to delete a parent you must make sure that all of its children are deleted.
 
@@ -43,6 +43,8 @@ This back-end part was developed by these students:</br>
 •	Maurice AKA </br>
 •	Franck KOUAMELAN
 
+note that this would not be done without being served with the project submitted by our teacher Olivier BARAIS.
+Thanks for your help!!!
 
 
 

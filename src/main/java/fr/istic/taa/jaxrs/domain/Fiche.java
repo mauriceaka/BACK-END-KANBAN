@@ -85,7 +85,7 @@ public class Fiche implements Serializable {
         this.lieu = lieu;
     }
 
-    @XmlElement(name = "Lieu")
+    @XmlElement(name = "Url")
     public String getUrl() {
         return url;
     }
@@ -102,7 +102,6 @@ public class Fiche implements Serializable {
     }
 
 
-    @XmlTransient
     @ManyToMany(mappedBy = "fiche", cascade = CascadeType.PERSIST)
     public List<Tag> getTag() {
         return tag;

@@ -32,7 +32,7 @@ public class TestApplication extends Application {
     @Override
     public Set<Class<?>> getClasses() {
 
-        final Set<Class<?>> clazzes = new HashSet<Class<?>>();
+        final Set<Class<?>> clazzes = new HashSet<>();
 
         clazzes.add(SectionResource.class);
         clazzes.add(TagResource.class);

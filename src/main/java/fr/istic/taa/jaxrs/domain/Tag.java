@@ -44,8 +44,9 @@ public class Tag implements Serializable {
     }
 
     @ManyToMany
-    @XmlElementWrapper(name = "fiches")
-    @XmlElement(name = "fiche")
+//    @XmlElementWrapper(name = "fiches")
+//    @XmlElement(name = "fiche")
+    @XmlTransient
     public List<Fiche> getFiche() {
         return fiche;
     }

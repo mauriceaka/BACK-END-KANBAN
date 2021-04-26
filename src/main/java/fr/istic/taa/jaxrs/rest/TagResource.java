@@ -28,12 +28,7 @@ public class TagResource {
     @GET
     @Path("")
     public List<Tag> getTags(){
-        for (Tag tag: tagDao.findAll()) {
-            for (Fiche fiche: tag.getFiche()) {
-                logger.info(fiche.getLibelle());
-            }
-        }
-
+        System.out.println(tagDao.findAll());
         // return list of tags
         return tagDao.findAll();
     }

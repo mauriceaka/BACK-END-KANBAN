@@ -1,6 +1,8 @@
 package fr.istic.taa.jaxrs.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -8,6 +10,7 @@ import javax.xml.bind.annotation.XmlTransient;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @XmlRootElement(name = "Fiche")
@@ -20,13 +23,13 @@ public class Fiche implements Serializable {
     private String lieu;
     private String note;
     private String url;
-    private List<Tag> tag;
+    private Set<Tag> tag;
     private Section section;
 
     public Fiche() {
     }
 
-    public Fiche(String libelle, Date datebutoire, int time, String lieu, String url, List<Tag> tag, String note, Section section) {
+    public Fiche(String libelle, Date datebutoire, int time, String lieu, String url, Set<Tag> tag, String note, Section section) {
         this.libelle = libelle;
         this.datebutoire = datebutoire;
         this.time = time;
@@ -111,13 +114,12 @@ public class Fiche implements Serializable {
         this.note = note;
     }
 
-
-    @ManyToMany(mappedBy = "fiche", cascade = CascadeType.PERSIST)
-    public List<Tag> getTag() {
+    @ManyToMany(mappedBy = "fiche", cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    public Set<Tag> getTag() {
         return tag;
     }
 
-    public void setTag(List<Tag> tag) {
+    public void setTag(Set<Tag> tag) {
         this.tag = tag;
     }
 

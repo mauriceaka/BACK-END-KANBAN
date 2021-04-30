@@ -1,16 +1,19 @@
 package fr.istic.taa.jaxrs.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @XmlRootElement(name = "Tag")
 public class Tag implements Serializable {
     private long id;
     private String libelle;
-    private List<Fiche> fiche;
+    private Set<Fiche> fiche;
 
     public Tag() {
     }
@@ -20,7 +23,7 @@ public class Tag implements Serializable {
     }
 
 
-    public Tag(String libelle, List<Fiche> fiche) {
+    public Tag(String libelle, Set<Fiche> fiche) {
         this.libelle = libelle;
         this.fiche = fiche;
     }
@@ -45,15 +48,15 @@ public class Tag implements Serializable {
         this.libelle = libelle;
     }
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
 //    @XmlElementWrapper(name = "fiches")
 //    @XmlElement(name = "fiche")
     @XmlTransient
-    public List<Fiche> getFiche() {
+    public Set<Fiche> getFiche() {
         return fiche;
     }
 
-    public void setFiche(List<Fiche> fiche) {
+    public void setFiche(Set<Fiche> fiche) {
         this.fiche = fiche;
     }
 }

@@ -22,17 +22,19 @@ public class Fiche implements Serializable {
     private String url;
     private List<Tag> tag;
     private Section section;
-    
-    public Fiche(){ }
-    public Fiche(String libelle, Date datebutoire, int time, String lieu, String url, List<Tag>tag, String note, Section section){
+
+    public Fiche() {
+    }
+
+    public Fiche(String libelle, Date datebutoire, int time, String lieu, String url, List<Tag> tag, String note, Section section) {
         this.libelle = libelle;
-        this. datebutoire= datebutoire;
-        this. time= time;
-        this. lieu= lieu;
-        this. note= note;
-        this. tag= tag;
-        this.url=url;
-        this.section=section;
+        this.datebutoire = datebutoire;
+        this.time = time;
+        this.lieu = lieu;
+        this.note = note;
+        this.tag = tag;
+        this.url = url;
+        this.section = section;
     }
 
     @Id
@@ -41,6 +43,7 @@ public class Fiche implements Serializable {
     public long getId() {
         return id;
     }
+
     public void setId(long id) {
         this.id = id;
     }
@@ -49,6 +52,7 @@ public class Fiche implements Serializable {
     public String getLibelle() {
         return libelle;
     }
+
     public void setLibelle(String libelle) {
         this.libelle = libelle;
     }
@@ -57,6 +61,7 @@ public class Fiche implements Serializable {
     public Date getDatebutoire() {
         return datebutoire;
     }
+
     public void setDatebutoire(Date datebutoire) {
         this.datebutoire = datebutoire;
     }
@@ -65,6 +70,7 @@ public class Fiche implements Serializable {
     public int getTime() {
         return time;
     }
+
     public void setTime(int time) {
         this.time = time;
     }
@@ -73,6 +79,7 @@ public class Fiche implements Serializable {
     public User getUser() {
         return user;
     }
+
     public void setUser(User user) {
         this.user = user;
     }
@@ -81,6 +88,7 @@ public class Fiche implements Serializable {
     public String getLieu() {
         return lieu;
     }
+
     public void setLieu(String lieu) {
         this.lieu = lieu;
     }
@@ -89,6 +97,7 @@ public class Fiche implements Serializable {
     public String getUrl() {
         return url;
     }
+
     public void setUrl(String url) {
         this.url = url;
     }
@@ -97,6 +106,7 @@ public class Fiche implements Serializable {
     public String getNote() {
         return note;
     }
+
     public void setNote(String note) {
         this.note = note;
     }
@@ -106,6 +116,7 @@ public class Fiche implements Serializable {
     public List<Tag> getTag() {
         return tag;
     }
+
     public void setTag(List<Tag> tag) {
         this.tag = tag;
     }
@@ -115,9 +126,10 @@ public class Fiche implements Serializable {
     public Section getSection() {
         return section;
     }
+
     public void setSection(Section section) {
         this.section = section;
     }
 
-   
+
 }

@@ -17,11 +17,13 @@ public class Section implements Serializable {
     private String nomsection;
     private List<Fiche> fiches;
 
-    public Section(){}
-
-    public Section(String nomsection ){
-        this.nomsection=nomsection;
+    public Section() {
     }
+
+    public Section(String nomsection) {
+        this.nomsection = nomsection;
+    }
+
     @Id
     @GeneratedValue
     @XmlElement(name = "id")
@@ -43,7 +45,7 @@ public class Section implements Serializable {
         this.nomsection = nomsection;
     }
 
-//    @XmlElementWrapper(name = "fiches")
+    //    @XmlElementWrapper(name = "fiches")
 //    @XmlElement(name = "fiche")
     @XmlTransient
     @OneToMany(mappedBy = "section", cascade = CascadeType.PERSIST)

@@ -12,15 +12,17 @@ public class Tag implements Serializable {
     private String libelle;
     private List<Fiche> fiche;
 
-    public Tag(){}
-    public Tag(String libelle){
-        this.libelle=libelle;
+    public Tag() {
+    }
+
+    public Tag(String libelle) {
+        this.libelle = libelle;
     }
 
 
-    public Tag(String libelle, List<Fiche> fiche){
-        this.libelle=libelle;
-        this.fiche=fiche;
+    public Tag(String libelle, List<Fiche> fiche) {
+        this.libelle = libelle;
+        this.fiche = fiche;
     }
 
     @Id

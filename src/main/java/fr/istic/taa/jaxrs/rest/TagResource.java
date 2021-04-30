@@ -28,7 +28,6 @@ public class TagResource {
     @GET
     @Path("")
     public List<Tag> getTags(){
-        System.out.println(tagDao.findAll());
         // return list of tags
         return tagDao.findAll();
     }
@@ -49,7 +48,7 @@ public class TagResource {
         // edit tag
         Tag newTag = getTagById(tag.getId());
         newTag.setLibelle(tag.getLibelle());
-        tagDao.save(newTag);
+        tagDao.update(newTag);
         return Response.ok().entity("SUCCESS").build();
     }
 
@@ -57,7 +56,6 @@ public class TagResource {
     @Path("/{tagId}")
     public Response deleteTagById(@PathParam("tagId") Long tagId){
         //return tag
-        logger.info("momo");
         tagDao.deleteById(tagId);
         return Response.ok().entity("DELETE SUCCESSFULLY").build();
     }

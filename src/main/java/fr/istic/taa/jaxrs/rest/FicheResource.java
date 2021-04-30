@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.Parameter;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import java.util.List;
+import java.util.logging.Logger;
 
 @Path("/fiches")
 @Produces({"application/json", "application/xml"})
@@ -53,7 +54,7 @@ public class FicheResource {
         newfiche.setLibelle(fiche.getLibelle());
         newfiche.setLieu(fiche.getLieu());
         newfiche.setDatebutoire(fiche.getDatebutoire());
-        ficheDao.save(fiche);
+        ficheDao.update(fiche);
         return Response.ok().entity("SUCCESS").build();
     }
 

@@ -48,7 +48,7 @@ public class UserResource {
         newUser.setFiche(user.getFiche());
         newUser.setProfession(user.getProfession());
         newUser.setEmail(user.getEmail());
-        userDao.save(newUser);
+        userDao.update(newUser);
         return Response.ok().entity("SUCCESS").build();
     }
 

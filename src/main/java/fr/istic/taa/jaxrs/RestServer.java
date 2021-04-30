@@ -20,7 +20,6 @@ public class RestServer {
         TestApplication ta = new TestApplication();
 
         ut.deploy(ta);
-
         ut.start(
                 Undertow.builder()
                         .addHttpListener(8081, "localhost")
